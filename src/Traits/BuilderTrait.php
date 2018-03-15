@@ -42,6 +42,11 @@ trait BuilderTrait
         return $this;
     }
 
+    public function resetName()
+    {
+        $this->name = null;
+    }
+
     /**
      * @param array $arguments
      *
@@ -60,13 +65,19 @@ trait BuilderTrait
         return $this;
     }
 
+    public function resetArguments()
+    {
+        $this->arguments = null;
+    }
+
     protected function processEnums()
     {
         foreach ($this->values as $value) {
-            if($value === strtoupper($value) && strpos($value, 'ENUM_') !== false) {
+            if(strpos($value, 'ENUM_') !== false) {
                 $this->arguments = str_replace(sprintf('"%s"', $value), $value, $this->arguments);
             }
         }
+        $this->arguments = str_replace('ENUM_', '', $this->arguments);
     }
 
     /**
@@ -85,6 +96,11 @@ trait BuilderTrait
         }
 
         return $this;
+    }
+
+    public function resetBody()
+    {
+        $this->body = null;
     }
 
     protected function processArgumentsNames(array $arguments)
