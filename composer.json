@@ -1,17 +1,5 @@
 {
-  "name": "himik/graphql-query-builder",
-  "description": "Provide simple api to build graphql mutation query",
-  "minimum-stability": "dev",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "Ruslan Evchev",
-      "email": "aion.planet.com@gmail.com"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "QueryBuilder\\": "src/"
-    }
+  "require": {
+
   }
 }
