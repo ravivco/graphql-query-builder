@@ -18,7 +18,7 @@ class QueryBuilder implements BuilderInterface
 
     public function build()
     {
-        return sprintf('query {%s}', $this->name . $this->arguments . $this->body);
+        return sprintf('query {%s}', $this->name . $this->arguments . $this->body . $this->meta);
     }
 
 }
